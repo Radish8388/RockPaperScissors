@@ -6,11 +6,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationIcon>paper.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="app.ico" />
+    <None Remove="app0.ico" />
+    <None Remove="app1.ico" />
     <None Remove="paper3.png" />
     <None Remove="rock3.png" />
     <None Remove="scissors2.png" />
@@ -20,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="app.ico" />
+    <Content Include="paper.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,9 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="app.ico">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="paper3.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
