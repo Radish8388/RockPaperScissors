@@ -1,6 +1,6 @@
 [Setup]
 AppName=Rock Paper Scissors
-AppVersion=1.0.1
+AppVersion=1.0.2
 DefaultDirName={autopf}\Radish\RockPaperScissors
 DefaultGroupName=Radish
 SetupIconFile=paper.ico
@@ -14,7 +14,7 @@ AppPublisherURL=https://radish-vert.vercel.app
 AppId={{dde294c2-8a5e-43e9-805c-54fc8613310c}
 
 [Files]
-Source: "bin\Release\net10.0-windows\publish\win-x64\*"; DestDir: "{app}"; Flags: recursesubdirs
+Source: "bin\Release\net10.0-windows\publish\win-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 
 [Icons]
 Name: "{group}\RockPaperScissors"; Filename: "{app}\RockPaperScissors.exe"
