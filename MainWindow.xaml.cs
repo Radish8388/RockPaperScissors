@@ -170,6 +170,20 @@ namespace RockPaperScissors
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // load the properties from disk
+            Properties.Settings.Default.Reload();
+
+            // check for upgrade
+            if (Properties.Settings.Default.UpgradeRequired)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.UpgradeRequired = false;
+                Properties.Settings.Default.Save();
+            }
+
+            this.Left = Properties.Settings.Default.WindowLeft;
+            this.Top = Properties.Settings.Default.WindowTop;
+
             double screenWidth = SystemParameters.WorkArea.Width;
             double screenHeight = SystemParameters.WorkArea.Height;
 
@@ -186,6 +200,13 @@ namespace RockPaperScissors
                 this.Left = screenWidth - this.Width;
             if (this.Top + this.Height > screenHeight)
                 this.Top = screenHeight - this.Height;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Properties.Settings.Default.WindowLeft = this.Left;
+            Properties.Settings.Default.WindowTop = this.Top;
+            Properties.Settings.Default.Save();
         }
     }
 }
